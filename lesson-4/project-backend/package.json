@@ -1,0 +1,20 @@
+{
+  "name": "goit-node-js",
+  "version": "1.0.0",
+  "description": "goit-node-js",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "globals": "^15.1.0",
+    "nodemon": "^3.1.3"
+  }
+}
