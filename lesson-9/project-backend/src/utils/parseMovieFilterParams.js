@@ -5,9 +5,7 @@ const parseBoolean = value => {
 
     if(!["true", "false"].includes(value)) return;
 
-    const parsedValue = Boolean(value);
-
-    return parsedValue;
+    return value === "true";
 }
 
 const parseMovieFitlerParams = ({type, favorite})=> {

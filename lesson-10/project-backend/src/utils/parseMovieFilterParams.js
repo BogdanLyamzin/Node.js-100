@@ -11,7 +11,7 @@ const parseBoolean = value => {
 const parseMovieFitlerParams = ({type, favorite})=> {
     const parsedType = typeList.includes(type) ? type : null;
     const parsedFavorite = parseBoolean(favorite);
-
+    console.log(parsedFavorite)
     return {
         type: parsedType,
         favorite: parsedFavorite,
