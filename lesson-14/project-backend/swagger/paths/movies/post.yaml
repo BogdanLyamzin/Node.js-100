@@ -1,0 +1,65 @@
+tags:
+  - Movies
+summary: Create movie
+operationId: createMoviet
+description: 'Create a movie with payload'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - title
+          - director
+          - releaseYear
+        properties:
+          title:
+            description: "Movie's name"
+            type: string
+            example: 'Avatar'
+          director:
+            description: "Movie's director"
+            type: string
+            example: 'James Cameron'
+          favorite:
+            description: "Is movie favorite"
+            type: boolean
+            example: true
+          type:
+            description: "Movie's type"
+            type: string
+            enum: ['film', 'serial']
+            example: 'film'
+          releaseYear:
+            description: "Movie's release year"
+            type: boolean
+            example: false
+          poster:
+            description: "Link to movie's poster"
+            type: string
+            example: <https://res.cloudinary.com/uqwgdu/image/upload/image.png>
+responses:
+  '201':
+    description: Creates a movie
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully created a student!
+            data:
+              type: object
+              $ref: '../../components/schemas/movie.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'
